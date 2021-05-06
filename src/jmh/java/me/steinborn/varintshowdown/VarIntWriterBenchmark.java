@@ -1,6 +1,5 @@
 package me.steinborn.varintshowdown;
 
-import bench.states.*;
 import me.steinborn.varintshowdown.states.*;
 import org.openjdk.jmh.annotations.*;
 
