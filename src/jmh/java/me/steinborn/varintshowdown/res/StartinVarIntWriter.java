@@ -8,9 +8,9 @@ public class StartinVarIntWriter implements VarIntWriter{
   public void write(ByteBuf buf, int value) {
     int continuationBytes = (31 - Integer.numberOfLeadingZeros(value)) / 7;
     for (int i = 0; i < continuationBytes; ++i) {
-      buf.writeByte(((byte) ((value & 0x7F) | 0x80)));
+      buf.writeByte((value & 0x7F) | 0x80);
       value >>>= 7;
     }
-    buf.writeByte((byte) value);
+    buf.writeByte(value);
   }
 }
