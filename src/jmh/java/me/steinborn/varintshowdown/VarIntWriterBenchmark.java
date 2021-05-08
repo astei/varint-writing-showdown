@@ -81,4 +81,12 @@ public class VarIntWriterBenchmark {
       state.write(number);
     }
   }
+
+  @Benchmark
+  @CompilerControl(CompilerControl.Mode.DONT_INLINE)
+  public void lucky5VarintWrite(Lucky5VarintState state) {
+    for (int number : numbers) {
+      state.write(number);
+    }
+  }
 }
